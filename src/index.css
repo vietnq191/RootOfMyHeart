@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap');
+
+:root {
+  --font-romantic: 'Playfair Display', serif;
+  --font-body: 'Quicksand', sans-serif;
+  
+  --bg-gradient: linear-gradient(135deg, #060713 0%, #0d0f22 45%, #180927 80%, #290825 100%);
+  --color-primary: #ff5e7e;
+  --color-primary-glow: rgba(255, 94, 126, 0.4);
+  --color-gold: #ffd700;
+  --color-gold-glow: rgba(255, 215, 0, 0.4);
+  --color-text-main: #f3f4f6;
+  --color-text-muted: #9ca3af;
+  
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+  --glass-blur: blur(16px);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-gradient);
+  color: var(--color-text-main);
+  overflow: hidden;
+  height: 100vh;
+  height: 100dvh;
+  width: 100vw;
+  width: 100dvw;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Glassmorphism styling helper */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 24px;
+}
+
+/* Upgraded Animations */
+
+/* Gentle heart hover & float */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) scale(1.04) rotate(4deg);
+  }
+}
+
+/* Pulsing heart glow */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px var(--color-primary-glow), inset 0 0 5px var(--color-primary-glow);
+    filter: brightness(1);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 94, 126, 0.9), inset 0 0 12px rgba(255, 94, 126, 0.6);
+    filter: brightness(1.15);
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+/* Glowing Jar ambient glow */
+@keyframes jar-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 15px rgba(255, 94, 126, 0.15)) drop-shadow(0 0 5px rgba(255, 255, 255, 0.1));
+  }
+  50% {
+    filter: drop-shadow(0 0 35px rgba(255, 94, 126, 0.4)) drop-shadow(0 0 12px rgba(255, 255, 255, 0.2));
+  }
+}
+
+/* Shooting Star */
+@keyframes shooting-star {
+  0% {
+    transform: translateX(0) translateY(0) rotate(-45deg) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+    scale: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-400px) translateY(400px) rotate(-45deg) scale(0);
+    opacity: 0;
+  }
+}
+
+/* Fireflies drifting */
+@keyframes drift {
+  0% {
+    transform: translate(0, 0) scale(0.8);
+    opacity: 0;
+  }
+  10%, 90% {
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(80px, -80px) scale(1.2);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(160px, -160px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* Pop the Cork */
+@keyframes pop-cork-animation {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  30% {
+    transform: translateY(-40px) rotate(-15deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120px) rotate(-35deg);
+    opacity: 0;
+  }
+}
